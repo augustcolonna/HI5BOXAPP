@@ -42,7 +42,7 @@ function Signin() {
       <div className="relative flex flex-col justify-center min-w-screen max-h-screen overflow-hidden">
         <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-green-700">
-            Sign in
+            Log In
           </h1>
           <form onSubmit={handleSubmit} className="mt-3">
             <div className="mb-2">
@@ -68,11 +68,11 @@ function Signin() {
 
             <div className="mt-6">
               <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">
-                Sign in
+                Log in
               </button>
             </div>
           </form>
-          <GoogleButton onClick={handleGoogleSignIn} />
+          <GoogleButton label="Log in with Google" onClick={handleGoogleSignIn} />
           <p className="mt-8 text-xs font-light text-center text-gray-700">
             {" "}
             Dont have an account?{" "}
