@@ -1,23 +1,28 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../contexts/AuthContext";
+
 
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState("");
   const { createUser } = UserAuth()
+  const navigate = useNavigate()
 
-const handleSubmit = async (e) => {
-    e.preventDefault()
-    setError('')
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError('');
     try {
-        await createUser(email, password)
+      await createUser(email, password);
+      navigate('/profile')
     } catch (e) {
-        setError(e.message)
-        console.log(e.message)
+      setError(e.message);
+      console.log(e.message);
     }
-}
+  };
+
  
   return (
     <div>
@@ -37,7 +42,7 @@ const handleSubmit = async (e) => {
               <input
                 onChange={(event) => setEmail(event.target.value)}
                 type="email"
-                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <div className="mb-2">
@@ -50,7 +55,7 @@ const handleSubmit = async (e) => {
               <input
               onChange={(event) => setPassword(event.target.value)}
                 type="password"
-                className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                className="block w-full px-4 py-2 mt-2 text-green-700 bg-white border rounded-md focus:border-green-400 focus:ring-green-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
             <Link to="#" className="text-xs text-green-600 hover:underline">
