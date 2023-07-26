@@ -6,6 +6,8 @@ import PrivateRoute from './components/PrivateRoute'
 import { Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/AuthContext";
 
+
+
 function App() {
   return (
     <div className="App">

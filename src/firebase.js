@@ -4,13 +4,14 @@ import { getAuth } from "firebase/auth";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
+
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyB7S-cdbJPk0Rjbm9bSKwvK1IahgxG3kN4",
   authDomain: "hi5boxapp.firebaseapp.com",
   projectId: "hi5boxapp",
   storageBucket: "hi5boxapp.appspot.com",
-  messagingSenderId: "466375421019",
+  messagingSenderId: "466375421019" ,
   appId: "1:466375421019:web:49b786f14ce208e217637e"
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { UserAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function Profile() {
@@ -20,6 +20,7 @@ function Profile() {
   return (
     <div className="max-w-screen mx-auto my-10 p-4">
       <h1>Profile Page</h1>
+      <p>Name: {user && user.displayName}</p>
       <p>User email: {user && user.email} </p>
       <button
         onClick={handleLogout}
