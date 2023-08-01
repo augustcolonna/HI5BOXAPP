@@ -25,10 +25,7 @@ function Profile() {
 				My Membership
 			</button>
 			<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">
-				My Calendar
-			</button>
-			<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">
-				New Calendar Event
+				My Schedule
 			</button>
 			<button
 				onClick={handleLogout}
