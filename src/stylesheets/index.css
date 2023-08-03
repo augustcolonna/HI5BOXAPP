@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* color themes:
+light greeen: #3D703A
+Dark Green: #1B2A23
+Sea Green: #223A31
+Light Sea Green: #447463
+Logo Green: #4F9C40
+Electric White: #EEEDED
+Black: #000000 */
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	background-color: #000000;
+	height: 100vh;
+	width: 100vw;
+	font-family: "Nunito", sans-serif;
+}
