@@ -1,6 +1,6 @@
 import React from "react";
 import { UserAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Profile() {
 	const { user, logout } = UserAuth();
@@ -25,7 +25,7 @@ function Profile() {
 				My Membership
 			</button>
 			<button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-green-700 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600">
-				My Schedule
+				<Link to="/schedule">My Schedule</Link>
 			</button>
 			<button
 				onClick={handleLogout}

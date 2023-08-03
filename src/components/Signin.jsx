@@ -2,6 +2,7 @@ import { React, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { UserAuth } from "../contexts/AuthContext";
 import GoogleButton from "react-google-button";
+import logo from "../assets/hi5Boxbig.png";
 
 function Signin() {
 	const { signIn, googleSignIn, user } = UserAuth();
@@ -39,6 +40,7 @@ function Signin() {
 
 	return (
 		<div>
+			<img src={logo} alt="logo" />
 			<div className="relative flex flex-col justify-center min-w-screen max-h-screen overflow-hidden">
 				<div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
 					<h1 className="text-3xl font-semibold text-center text-green-700">
