@@ -43,7 +43,7 @@ function Signin() {
 		<div className="main-container">
 			<div className="container">
 				<div className="logo">
-					<img className="animate__slideInDown" src={logo} alt="logo" />
+					<img src={logo} alt="logo" />
 				</div>
 				<div className="content-container">
 					<h1 className="form-title">LOG IN</h1>
@@ -71,6 +71,7 @@ function Signin() {
 					<GoogleButton
 						label="Log in with Google"
 						className="google-btn"
+						type="light"
 						onClick={handleGoogleSignIn}
 					/>
 					<p className="change-register-method">
