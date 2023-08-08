@@ -1,11 +1,11 @@
 import React from "react";
-import Signin from "./components/Signin";
-import Signup from "./components/Signup";
-import Profile from "./components/Profile";
-import PrivateRoute from "./components/PrivateRoute";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
+import Profile from "./pages/Profile";
+import PrivateRoute from "./utils/PrivateRoute";
 import { Routes, Route } from "react-router-dom";
 import { AuthContextProvider } from "./contexts/AuthContext";
-import MySchedule from "./components/MySchedule";
+import MySchedule from "./pages/MySchedule";
 
 function App() {
 	return (
