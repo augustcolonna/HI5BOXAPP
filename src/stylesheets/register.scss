@@ -19,11 +19,11 @@ Black: #000000
 	align-items: center;
 	padding-top: 20px;
 	margin: 0;
-	animation: slideinFromLeft 2s;
-	-webkit-animation: slideinFromLeft 2s; /* Safari, Chrome and Opera > 12.1 */
-	-moz-animation: slideinFromLeft 2s; /* Firefox < 16 */
-	-ms-animation: slideinFromLeft 2s; /* Internet Explorer */
-	-o-animation: slideinFromLeft 2s; /* Opera < 12.1 */
+	animation: fadein 2s;
+	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 2s; /* Firefox < 16 */
+	-ms-animation: fadein 2s; /* Internet Explorer */
+	-o-animation: fadein 2s; /* Opera < 12.1 */
 }
 
 img {

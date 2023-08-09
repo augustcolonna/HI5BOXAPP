@@ -1,36 +1,39 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { BottomNavigation, BottomNavigationAction } from "@mui/material";
-import { UserAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
 import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 import SportsHockeyIcon from "@mui/icons-material/SportsHockey";
-import LogoutIcon from "@mui/icons-material/Logout";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import HomeIcon from "@mui/icons-material/Home";
+import "../stylesheets/navbar.scss";
 
 function NavBar() {
-	const { logout } = UserAuth();
-	const navigate = useNavigate();
-
-	const handleLogout = async () => {
-		try {
-			await logout();
-			navigate("/");
-			console.log("You have successfully logged out");
-		} catch (error) {
-			console.log(error.message);
-		}
-	};
-
 	return (
-		<div>
-			<BottomNavigation showLabels>
-				<BottomNavigationAction label="Fitness" icon={<FitnessCenterIcon />} />
-				<BottomNavigationAction label="Soccer" icon={<SportsSoccerIcon />} />
-				<BottomNavigationAction label="Hockey" icon={<SportsHockeyIcon />} />
+		<div className="nav-container">
+			<BottomNavigation className="nav" showLabels>
 				<BottomNavigationAction
-					label="Logout"
-					onClick={handleLogout}
-					icon={<LogoutIcon />}
+					component={Link}
+					to="/profile"
+					label="Home"
+					icon={<HomeIcon />}
+				/>
+				<BottomNavigationAction
+					component={Link}
+					to="/fitness"
+					label="Fitness"
+					icon={<FitnessCenterIcon />}
+				/>
+				<BottomNavigationAction
+					component={Link}
+					to="/football"
+					label="football"
+					icon={<SportsSoccerIcon />}
+				/>
+				<BottomNavigationAction
+					component={Link}
+					to="/hockey"
+					label="Hockey"
+					icon={<SportsHockeyIcon />}
 				/>
 			</BottomNavigation>
 		</div>
