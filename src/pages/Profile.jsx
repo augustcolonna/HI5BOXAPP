@@ -1,7 +1,6 @@
 import React from "react";
 import { UserAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
@@ -9,7 +8,7 @@ import NavBar from "../components/NavBar";
 
 import "../stylesheets/profile.scss";
 
-export default function Profile() {
+function Profile() {
 	const { user, logout } = UserAuth();
 	const navigate = useNavigate();
 
@@ -27,6 +26,14 @@ export default function Profile() {
 			await logout();
 			navigate("/");
 			console.log("You have successfully logged out");
+		} catch (error) {
+			console.log(error.message);
+		}
+	};
+
+	const handleNavigate = () => {
+		try {
+			navigate("/fitness");
 		} catch (error) {
 			console.log(error.message);
 		}
@@ -67,6 +74,7 @@ export default function Profile() {
 						}}
 					>
 						<MenuItem onClick={handleClose}>My account</MenuItem>
+						<MenuItem onClick={handleNavigate}>My Classes</MenuItem>
 						<MenuItem onClick={handleLogout}>Logout</MenuItem>
 					</Menu>
 				</div>
@@ -78,3 +86,5 @@ export default function Profile() {
 		</div>
 	);
 }
+
+export default Profile;

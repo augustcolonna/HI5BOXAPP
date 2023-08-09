@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 
-function Soccer() {
+function Football() {
 	return (
 		<div>
 			<div>football</div>
@@ -10,4 +10,4 @@ function Soccer() {
 	);
 }
 
-export default Soccer;
+export default Football;
