@@ -1,43 +1,47 @@
 import React from "react";
 import NavBar from "./NavBar";
-import VerticalTabs from "../components/VerticalTabs";
+import { useState } from "react";
+import classSchedule from "../class-schedule.json";
+import FitnessClassSchedule from "./FitnessClassSchedule";
 
 export default function Fitness() {
-	// const mondayClasses = [
-	// 	{ class: "Open WOD Basic", time: "10:00 - 11:00" },
-	// 	{ class: "Open WOD Beginner", time: "18:00 - 19:00" },
-	// 	{ class: "Open WOD Basic", time: "19:15 - 20:15" },
-	// ];
+	const [classes, setClasses] = useState(classSchedule);
+	const [showClasses, setShowClasses] = useState(false);
 
-	// const tuesdayClasses = [
-	// 	{ class: "Functional Bodybuilding", time: "18:00: -19:00" },
-	// 	{ class: "Gymnastic & Bodyweight", time: "19:15 - 20:15" },
-	// ];
-
-	// const wednesdayClasses = [
-	// 	{ class: "Open WOD Basic", time: "10:00 - 11:00" },
-	// 	{ class: "Open WOD Beginner", time: "18:00 - 19:00" },
-	// 	{ class: "Open WOD Basic", time: "19:15 - 20:15" },
-	// ];
-
-	// const thursdayClasses = [
-	// 	{ class: "Open WOD Endurance", time: "18:00 - 19:00" },
-	// 	{ class: "Open WOD Advanced", time: "19:15 - 20:15" },
-	// ];
-
-	// const fridayClasses = [
-	// 	{ class: "Open WOD Basic", time: "16:30 - 17:30" },
-	// 	{ class: "Open WOD Basic", time: "17:45 - 18:45" },
-	// 	{ class: "Core & Recovery", time: "19:00 - 19:30" },
-	// ];
-
-	// const saturdayClasses = [{ class: "Open WOD Team", time: "14:00 - 15:00" }];
-
-	// const sundayClasses = [{ class: "Open WOD Team", time: "11:00 - 12:00" }];
+	const toggleClassSchedule = () => {
+		setShowClasses(!showClasses);
+	};
 
 	return (
 		<div>
-			<VerticalTabs />
+			<h1>Class Schedules</h1>
+
+			<button onClick={toggleClassSchedule}>
+				{showClasses ? "Hide" : "Monday Schedule"}
+			</button>
+
+			{showClasses &&
+				classes
+					.filter((session) => {
+						return session.day === "Monday";
+					})
+					.map((session) => {
+						return <FitnessClassSchedule key={session._id} session={session} />;
+					})}
+
+			<button onClick={toggleClassSchedule}>
+				{showClasses ? "Hide" : "Tuesday Schedule"}
+			</button>
+
+			{showClasses &&
+				classes
+					.filter((session) => {
+						return session.day === "Tuesday";
+					})
+					.map((session) => {
+						return <FitnessClassSchedule key={session._id} session={session} />;
+					})}
+
 			<NavBar />
 		</div>
 	);
