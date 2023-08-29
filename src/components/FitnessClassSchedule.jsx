@@ -27,7 +27,7 @@ function FitnessClassSchedule(props) {
         <div className="workout-details">
           {workout.workout.map((workout) => {
             return (
-              <div className="title-time-container" key={workout._id}>
+              <div className="title-time-container" key={workout.day}>
                 <p className="workout-title">{workout.title}</p>
                 <p className="workout-time">{workout.time}</p>
               </div>
