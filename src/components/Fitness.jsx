@@ -1,48 +1,37 @@
 import React from "react";
 import NavBar from "./NavBar";
 import { useState } from "react";
-import classSchedule from "../class-schedule.json";
+import workoutSchedule from "../class-schedule.json";
 import FitnessClassSchedule from "./FitnessClassSchedule";
+import "../stylesheets/fitness.scss";
 
-export default function Fitness() {
-	const [classes, setClasses] = useState(classSchedule);
-	const [showClasses, setShowClasses] = useState(false);
+function Fitness() {
+  const [workout, setWorkout] = useState(workoutSchedule);
 
-	const toggleClassSchedule = () => {
-		setShowClasses(!showClasses);
-	};
+  function selectSpecificWorkout(workoutId) {
+    const filterWorkout = workout.filter((workout) => {
+      return workout._id === workoutId;
+    });
+    setWorkout(filterWorkout);
+  }
 
-	return (
-		<div>
-			<h1>Class Schedules</h1>
-
-			<button onClick={toggleClassSchedule}>
-				{showClasses ? "Hide" : "Monday Schedule"}
-			</button>
-
-			{showClasses &&
-				classes
-					.filter((session) => {
-						return session.day === "Monday";
-					})
-					.map((session) => {
-						return <FitnessClassSchedule key={session._id} session={session} />;
-					})}
-
-			<button onClick={toggleClassSchedule}>
-				{showClasses ? "Hide" : "Tuesday Schedule"}
-			</button>
-
-			{showClasses &&
-				classes
-					.filter((session) => {
-						return session.day === "Tuesday";
-					})
-					.map((session) => {
-						return <FitnessClassSchedule key={session._id} session={session} />;
-					})}
-
-			<NavBar />
-		</div>
-	);
+  return (
+    <div className="schedule-container">
+      <h1>Workout Schedule</h1>
+      <div className="workout-schedule">
+        {workoutSchedule.map((workout) => {
+          return (
+            <FitnessClassSchedule
+              key={workout._id}
+              workout={workout}
+              selectSpecificWorkout={selectSpecificWorkout}
+            />
+          );
+        })}
+      </div>
+      <NavBar />
+    </div>
+  );
 }
+
+export default Fitness;

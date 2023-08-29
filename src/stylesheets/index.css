@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* color themes:
 light greeen: #3D703A
@@ -12,11 +12,13 @@ Electric White: #EEEDED
 Black: #000000 */
 
 body,
-html {
-	margin: 0;
-	padding: 0;
-	background-color: #3d703a;
-	height: 100vh;
-	width: 100vw;
-	font-family: "Nunito", sans-serif;
+html,
+:root,
+.App {
+  margin: 0;
+  padding: 0;
+  background-color: #3d703a;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Nunito", sans-serif;
 }

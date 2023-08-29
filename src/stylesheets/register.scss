@@ -13,215 +13,211 @@ Black: #000000
 @import "animate.css";
 
 .logo {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding-top: 20px;
-	margin: 0;
-	animation: fadein 2s;
-	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-	-moz-animation: fadein 2s; /* Firefox < 16 */
-	-ms-animation: fadein 2s; /* Internet Explorer */
-	-o-animation: fadein 2s; /* Opera < 12.1 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  margin: 0;
+  animation: fadein 2s;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
 }
 
 img {
-	width: 90%;
-	height: 100%;
-	border-radius: 20px;
+  width: 90%;
+  height: 100%;
+  border-radius: 20px;
 }
 
 .main-container {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	width: 100vw;
-	height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
 }
 
 .container {
-	background-color: #4f9c40;
-	position: relative;
-	box-shadow: 0px 0px 15px 3px #eeeded;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	width: 95vw;
-	height: 95vh;
-	overflow: hidden;
-	border-radius: 20px;
+  background-color: #4f9c40;
+  position: relative;
+  box-shadow: 0px 0px 15px 3px #eeeded;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95vw;
+  height: 95vh;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .content-container {
-	width: 90%;
-	height: 60%;
-	margin: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	background-color: #171717;
-	border-radius: 15px;
-	padding-top: 30px;
-	padding-bottom: 30px;
-	animation: fadein 2s;
-	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-	-moz-animation: fadein 2s; /* Firefox < 16 */
-	-ms-animation: fadein 2s; /* Internet Explorer */
-	-o-animation: fadein 2s; /* Opera < 12.1 */
+  width: 90%;
+  height: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #171717;
+  border-radius: 15px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  animation: fadein 2s;
+  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s; /* Firefox < 16 */
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
 
-	.form-title {
-		color: #eeeded;
-		font-size: 3.5rem;
-		font-weight: 500;
-		text-align: center;
-	}
+  .form-title {
+    color: #eeeded;
+    font-size: 3.5rem;
+    font-weight: 500;
+    text-align: center;
+  }
 
-	.register-form {
-		margin-top: 3px;
-		width: 70%;
-		margin-bottom: 3px;
-	}
+  .register-form {
+    margin-top: 3px;
+    width: 70%;
+    margin-bottom: 3px;
+  }
 
-	.form-labels {
-		display: block;
-		font-size: 2rem;
-		color: #eeeded;
-		margin-bottom: 4px;
-		margin-top: 4px;
-	}
+  .form-labels {
+    display: block;
+    font-size: 2rem;
+    color: #eeeded;
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
 
-	input[type="email"],
-	input[type="password"],
-	textarea {
-		border: none;
-		outline: none;
+  input[type="email"],
+  input[type="password"],
+  textarea {
+    border: none;
+    outline: none;
 
-		&:focus {
-			outline: 1px solid #4f9c40 !important;
-		}
-	}
+    &:focus {
+      outline: 1px solid #4f9c40 !important;
+    }
+  }
 
-	.form-input {
-		display: block;
-		width: 100%;
-		padding: 2px 4px 2px 4px;
-		margin-top: 2px;
-		color: #4f9c40;
-		font-weight: 600;
-		border-radius: 5px;
-		margin-bottom: 3px;
-		margin-top: 3px;
-		background-color: #eeeded;
-		box-shadow: 0px 0px 10px 0px #eeeded;
-	}
+  .form-input {
+    display: block;
+    width: 100%;
+    height: 20px;
+    padding: 2px 4px 2px 4px;
+    margin-top: 2px;
+    color: #4f9c40;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    background-color: #eeeded;
+    box-shadow: 0px 0px 10px 0px #eeeded;
+  }
 
-	.button-container {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+  .button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-	.register-btn {
-		width: 90%;
-		padding: 4px 4px 4px 4px;
-		color: #eeeded;
-		font-size: 1.5rem;
-		background-color: #4f9c40;
-		border-radius: 5px;
-		margin: 15px;
-		transition: transform 0.8s;
+  .register-btn {
+    width: 90%;
+    padding: 4px 4px 4px 4px;
+    color: #eeeded;
+    font-size: 1.5rem;
+    background-color: #4f9c40;
+    border-radius: 5px;
+    margin: 15px;
+    border: none;
 
-		&:hover {
-			background-color: #4f9c40;
-			font-weight: 600;
-			transform: scale(1.2);
-		}
+    &:active {
+      background-color: #eeeded;
+      color: #4f9c40;
+    }
+  }
 
-		&:active {
-			transform: scale(0.9);
-		}
-	}
+  .google-btn {
+    margin-bottom: 15px;
+  }
 
-	.google-btn {
-		margin-bottom: 15px;
-	}
+  .change-register-method {
+    color: #eeeded;
+    font-size: 1.2rem;
 
-	.change-register-method {
-		color: #eeeded;
-		font-size: 1.2rem;
-
-		span {
-			color: #4f9c40;
-		}
-	}
+    span {
+      color: #4f9c40;
+    }
+  }
 }
 
 @keyframes fadein {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideinFromLeft {
-	from {
-		margin-left: 100%;
-		width: 300%;
-	}
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
 
-	to {
-		margin-left: 0%;
-		width: 100%;
-	}
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 @-moz-keyframes slideinFromLeft {
-	from {
-		margin-left: 100%;
-		width: 300%;
-	}
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
 
-	to {
-		margin-left: 0%;
-		width: 100%;
-	}
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes slideinFromLeft {
-	from {
-		margin-left: 100%;
-		width: 300%;
-	}
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
 
-	to {
-		margin-left: 0%;
-		width: 100%;
-	}
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
 }
