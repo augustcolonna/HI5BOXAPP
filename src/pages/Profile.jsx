@@ -2,44 +2,47 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { UserAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { db } from "../firebase";
-import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
+// import { db } from "../firebase";
+// import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import NavBar from "../components/NavBar";
-
+import Wod from "../components/Wod";
 import "../stylesheets/profile.scss";
 
 function Profile() {
   const { user, logout } = UserAuth();
   const navigate = useNavigate();
-  const [myWorkouts, setMyWorkouts] = useState([]);
+  // const [myWorkouts, setMyWorkouts] = useState([]);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [workoutList, setWorkoutList] = useState([]);
   const open = Boolean(anchorEl);
-  const workoutsCollection = collection(db, "myWorkouts");
+  // const workoutsCollection = collection(db, "myWorkouts");
 
-  useEffect(() => {
-    const getWorkouts = async () => {
-      try {
-        const data = await getDocs(workoutsCollection);
-        const filteredData = data.docs.map((doc) => ({
-          ...doc.data(),
-          id: doc.id,
-        }));
-        console.log(filteredData);
-        setMyWorkouts(filteredData);
-      } catch (err) {
-        console.log(err.message);
-      }
-    };
-    getWorkouts();
-  }, []);
+  // useEffect(() => {
+  //   const getWorkouts = async () => {
+  //     try {
+  //       const data = await getDocs(workoutsCollection);
+  //       const filteredData = data.docs.map((doc) => ({
+  //         ...doc.data(),
+  //         id: doc.id,
+  //       }));
+  //       console.log(filteredData);
+  //       setMyWorkouts(filteredData);
+  //     } catch (err) {
+  //       console.log(err.message);
+  //     }
+  //   };
+  //   getWorkouts();
+  // }, []);
 
-  const cancelWorkout = async (id) => {
-    const workoutDoc = doc(db, "myWorkouts", id);
-    await deleteDoc(workoutDoc);
-  };
+  // const cancelWorkout = async (id) => {
+  //   const workoutDoc = doc(db, "myWorkouts", id);
+  //   await deleteDoc(workoutDoc);
+  // };
+
+  useEffect(() => {});
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -109,20 +112,11 @@ function Profile() {
           <h2>iframe instagram page here</h2>
         </div>
         <div>
-          <h2>My Workouts this Week</h2>
-          {myWorkouts.map((workout) => {
-            return (
-              <div key={workout.id}>
-                <h3>{workout.title}</h3>
-                <p>{workout.time}</p>
-                <button onClick={() => cancelWorkout(workout.id)}>
-                  Cancel
-                </button>
-              </div>
-            );
-          })}
+          <h2>Todays Workout</h2>
+          <Wod />
         </div>
       </div>
+
       <NavBar />
     </div>
   );

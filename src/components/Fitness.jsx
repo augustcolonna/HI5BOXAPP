@@ -1,6 +1,7 @@
 import React from "react";
 import NavBar from "./NavBar";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import workoutSchedule from "../class-schedule.json";
 import FitnessClassSchedule from "./FitnessClassSchedule";
 import "../stylesheets/fitness.scss";
@@ -28,6 +29,9 @@ function Fitness() {
             />
           );
         })}
+        <Link to="/profile">
+          <button>Sign Up for Todays Workout!</button>{" "}
+        </Link>
       </div>
       <NavBar />
     </div>
