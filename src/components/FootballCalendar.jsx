@@ -60,13 +60,14 @@ function FootballCalendar() {
         selected={newEvent.end}
         onChange={(end) => setNewEvent({ ...newEvent, end })}
       />
+
       <button onClick={handleAddEvent}>Add Class to my Schedule</button>
       <Calendar
         localizer={localizer}
         events={allEvents}
         startAccessor="start"
         endAccessor="end"
-        style={{ height: 500, margin: "100px" }}
+        style={{ height: 500 }}
       />
     </div>
   );
