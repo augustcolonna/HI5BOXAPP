@@ -1,10 +1,11 @@
 import React from "react";
 import NavBar from "./NavBar";
+import FootballCalendar from "./FootballCalendar";
 
 function Football() {
   return (
     <div>
-      <div>football</div>
+      <FootballCalendar />
       <NavBar />
     </div>
   );
