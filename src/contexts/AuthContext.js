@@ -13,7 +13,7 @@ const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
-  //   const [admin, setAdmin] = useState(false);
+  const [admin, setAdmin] = useState(false);
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
@@ -33,11 +33,11 @@ export const AuthContextProvider = ({ children }) => {
     return signOut(auth);
   };
 
-  //   const checkAdmin = () => {
-  //     if (auth.email === "august.colonna@gmail.com") {
-  //       setAdmin(true);
-  //     }
-  //   };
+  const checkAdmin = () => {
+    if (user.email === "august.colonna@gmail.com") {
+      setAdmin(true);
+    }
+  };
 
   // way to manage who is logged in throughout the application
   useEffect(() => {
@@ -58,6 +58,8 @@ export const AuthContextProvider = ({ children }) => {
         user,
         logout,
         signIn,
+        checkAdmin,
+        admin,
       }}
     >
       {children}

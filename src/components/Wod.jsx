@@ -3,6 +3,7 @@ import { useState } from "react";
 import { storage } from "../firebase";
 import { ref, uploadBytes, list, getDownloadURL } from "firebase/storage";
 import { UserAuth } from "../contexts/AuthContext";
+import "../stylesheets/wod.scss";
 
 function Wod() {
   const [wodUpload, setWodUpload] = useState(null);
@@ -33,21 +34,25 @@ function Wod() {
 
   return (
     <div className="wod-container">
+      <h2>Todays Workout</h2>
       {checkAdmin && (
         <div>
           <input
+            className="wod-input"
             type="file"
             onChange={(event) => {
               setWodUpload(event.target.files[0]);
             }}
           />
-          <button onClick={uploadWod}>Add Todays Workout</button>
+          <button className="add-wod-btn" onClick={uploadWod}>
+            Add Todays Workout
+          </button>
         </div>
       )}
       {workoutList.map((url) => {
         return (
-          <div key={url.path_}>
-            <img src={url} alt={"wod"} />
+          <div className="wod-img-container" key={url.path_}>
+            <img className="wod-img" src={url} alt={"wod"} />
           </div>
         );
       })}

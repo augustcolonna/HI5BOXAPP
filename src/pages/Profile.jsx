@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
 import { UserAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +16,6 @@ function Profile() {
   const navigate = useNavigate();
   // const [myWorkouts, setMyWorkouts] = useState([]);
   const [anchorEl, setAnchorEl] = useState(null);
-  const [workoutList, setWorkoutList] = useState([]);
   const open = Boolean(anchorEl);
   // const workoutsCollection = collection(db, "myWorkouts");
 
@@ -41,8 +40,6 @@ function Profile() {
   //   const workoutDoc = doc(db, "myWorkouts", id);
   //   await deleteDoc(workoutDoc);
   // };
-
-  useEffect(() => {});
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -73,7 +70,7 @@ function Profile() {
     <div className="profile-container">
       <div className="profile-information">
         <h1>Hello, {user && user.displayName}!</h1>
-        <p>email: {user && user.email} </p>
+        {/* <p>email: {user && user.email} </p> */}
         <div>
           <Button
             id="positioned-button"
@@ -108,15 +105,8 @@ function Profile() {
             <MenuItem onClick={handleLogout}>Logout</MenuItem>
           </Menu>
         </div>
-        <div className="gym-news">
-          <h2>iframe instagram page here</h2>
-        </div>
-        <div>
-          <h2>Todays Workout</h2>
-          <Wod />
-        </div>
+        <Wod />
       </div>
-
       <NavBar />
     </div>
   );
