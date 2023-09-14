@@ -36,7 +36,8 @@ function Wod() {
     <div className="wod-container">
       <h2>Todays Workout</h2>
       {checkAdmin && (
-        <div>
+        <div className="wod-information">
+          <label className="wod-label">Upload Todays Workout</label>
           <input
             className="wod-input"
             type="file"
