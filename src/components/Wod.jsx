@@ -9,17 +9,21 @@ function Wod() {
   const [wodUpload, setWodUpload] = useState(null);
   const [workoutList, setWorkoutList] = useState([]);
   const { checkAdmin } = UserAuth();
-
   const imageRef = ref(storage, "images/");
-  const uploadWod = () => {
-    if (wodUpload === null) return;
-    const imageRef = ref(storage, `images/${wodUpload.name + Date.now()}`);
-    console.log(imageRef);
-    uploadBytes(imageRef, wodUpload).then((snapshot) => {
-      getDownloadURL(snapshot.ref).then((url) => {
-        setWorkoutList((prev) => [...prev, url]);
+
+  const uploadWod = async () => {
+    if (wodUpload === null) {
+      alert("Please select a file to upload");
+      return;
+    } else {
+      const imageRef = ref(storage, `images/${wodUpload + Date.now()}`);
+      console.log(imageRef);
+      await uploadBytes(imageRef, wodUpload).then((snapshot) => {
+        getDownloadURL(snapshot.ref).then((url) => {
+          setWorkoutList((prev) => [...prev, url]);
+        });
       });
-    });
+    }
   };
 
   useEffect(() => {
@@ -37,7 +41,7 @@ function Wod() {
       <h2>Todays Workout</h2>
       {checkAdmin && (
         <div className="wod-information">
-          <label className="wod-label">Upload Todays Workout</label>
+          <label className="wod-label">Upload Todays Workout:</label>
           <input
             className="wod-input"
             type="file"
@@ -50,6 +54,7 @@ function Wod() {
           </button>
         </div>
       )}
+
       {workoutList.map((url) => {
         return (
           <div className="wod-img-container" key={url.path_}>
