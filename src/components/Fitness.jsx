@@ -24,7 +24,9 @@ function Fitness() {
   return (
     <div className="schedule-container">
       <h1>Workout Schedule</h1>
-      <button onClick={toggleWodSignUp}>Sign Up for Todays Workout!</button>
+      {toggleWodSignUp && (
+        <button onClick={toggleWodSignUp}>Sign Up for Todays Workout!</button>
+      )}
       {showWod && <WodSignUp />}
 
       <div className="workout-schedule">

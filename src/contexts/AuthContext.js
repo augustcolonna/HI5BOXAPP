@@ -14,7 +14,6 @@ const UserContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
-  const [admin, setAdmin] = useState(false);
 
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
@@ -24,9 +23,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const createUser = async (email, password, displayName) => {
     await createUserWithEmailAndPassword(auth, email, password);
-    if (email === "august.colonna@gmail.com") {
-      setAdmin(true);
-    }
+
     updateProfile(auth.currentUser, {
       displayName: displayName,
     })
@@ -65,7 +62,6 @@ export const AuthContextProvider = ({ children }) => {
         user,
         logout,
         signIn,
-        admin,
       }}
     >
       {children}
