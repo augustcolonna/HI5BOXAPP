@@ -2,16 +2,14 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { storage } from "../firebase";
 import { ref, uploadBytes, list, getDownloadURL } from "firebase/storage";
-
-import "../stylesheets/wod.scss";
 import { UserAuth } from "../contexts/AuthContext";
+import "../stylesheets/wod.scss";
 
 function Wod() {
   const [wodUpload, setWodUpload] = useState(null);
   const [workoutList, setWorkoutList] = useState([]);
-  const { checkAdmin } = UserAuth();
-
   const imageRef = ref(storage, "images/");
+  const { checkAdmin, admin } = UserAuth();
 
   const uploadWod = async () => {
     if (wodUpload === null) {
@@ -41,7 +39,7 @@ function Wod() {
   return (
     <div className="wod-container">
       <h2>Todays Workout</h2>
-      {checkAdmin && (
+      {admin && checkAdmin && (
         <div className="wod-information">
           <label className="wod-label">Upload Todays Workout:</label>
           <input

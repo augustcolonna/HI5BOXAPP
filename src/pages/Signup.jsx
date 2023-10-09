@@ -9,6 +9,7 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [displayName, setDisplayName] = useState("");
+
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState("");
   const { createUser, googleSignIn, user } = UserAuth();

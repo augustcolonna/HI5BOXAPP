@@ -15,6 +15,7 @@ const UserContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
   const [admin, setAdmin] = useState(false);
+
   const googleSignIn = () => {
     const provider = new GoogleAuthProvider();
     // signInWithPopup(auth, provider);
@@ -23,7 +24,9 @@ export const AuthContextProvider = ({ children }) => {
 
   const createUser = async (email, password, displayName) => {
     await createUserWithEmailAndPassword(auth, email, password);
-
+    if (email === "august.colonna@gmail.com") {
+      setAdmin(true);
+    }
     updateProfile(auth.currentUser, {
       displayName: displayName,
     })
@@ -33,14 +36,6 @@ export const AuthContextProvider = ({ children }) => {
       .catch((error) => {
         console.log(error);
       });
-  };
-
-  const checkAdmin = () => {
-    if (user.email === "august.colonna@gmail.com") {
-      setAdmin(true);
-    } else {
-      setAdmin(false);
-    }
   };
 
   const signIn = (email, password) => {
@@ -70,6 +65,7 @@ export const AuthContextProvider = ({ children }) => {
         user,
         logout,
         signIn,
+        admin,
       }}
     >
       {children}
