@@ -15,7 +15,7 @@ function WodSignUp() {
   return (
     <div>
       <Wod />
-      {!likeWod && <button onClick={likeWod}>Sign Up for the Class!</button>}
+       <button onClick={likeWod}>Sign Up for the Class!</button>
     </div>
   );
 }
