@@ -2,13 +2,15 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { storage } from "../firebase";
 import { ref, uploadBytes, list, getDownloadURL } from "firebase/storage";
-import { UserAuth } from "../contexts/AuthContext";
+
 import "../stylesheets/wod.scss";
+import { UserAuth } from "../contexts/AuthContext";
 
 function Wod() {
   const [wodUpload, setWodUpload] = useState(null);
   const [workoutList, setWorkoutList] = useState([]);
   const { checkAdmin } = UserAuth();
+
   const imageRef = ref(storage, "images/");
 
   const uploadWod = async () => {
